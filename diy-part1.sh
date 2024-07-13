@@ -8,7 +8,9 @@
 # https://github.com/JE668/Phicomm-K3-LEDE-Firmware-Lean
 # File name: beta/diy-part1.sh
 # Description: OpenWrt DIY script part 1 (Before Update feeds)
-#
+
+# https://github.com/FenghenHome/lede
+# https://github.com/coolsnowwolf/lede.git
 
 # Uncomment a feed source
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
