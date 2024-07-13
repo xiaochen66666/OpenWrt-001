@@ -73,10 +73,10 @@ echo '=========Replace k3screen drive plug OK!========='
 
 
 #1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
-#firmware='69027'
-#echo '替换无线驱动'
-#wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
-#echo '=========Replace k3 wireless firmware OK!========='
+firmware='69027'
+echo '替换无线驱动'
+wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
+echo '=========Replace k3 wireless firmware OK!========='
 
 # Add a feed source
 #echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
