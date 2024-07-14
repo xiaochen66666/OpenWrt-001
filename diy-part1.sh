@@ -15,10 +15,10 @@
 # Uncomment a feed source
 # sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default
 
-echo '添加SSR-Plus软件源'
-sed -i "/helloworld/d" "feeds.conf.default"
-echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
-echo '=========Add SSR-Plus source OK!========='
+# echo '添加SSR-Plus软件源'
+# sed -i "/helloworld/d" "feeds.conf.default"
+# echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
+# echo '=========Add SSR-Plus source OK!========='
 
 echo '添加passwall软件源'
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
@@ -86,4 +86,4 @@ echo '=========Replace k3 wireless firmware OK!========='
 #echo 'src-git small8 https://github.com/Lenyu2020/small-package' >>feeds.conf.default
 
 #Compile K3 Only
-#sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
+sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
