@@ -60,7 +60,8 @@ echo '=========Replace k3screen drive plug OK!========='
 
 
 # echo '添加kenzok8 small-package'
-# echo 'src-git kenzok8 https://github.com/kenzok8/small-package' >>feeds.conf.default
+# echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
+# echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
 # echo '=========Add kenzok8 source OK!========='
 
 # echo '添加kiddin9软件源'
