@@ -20,9 +20,13 @@
 # echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
 # echo '=========Add SSR-Plus source OK!========='
 
-echo '添加passwall软件源'
-echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
-echo 'src-git passwallpackages https://github.com/xiaorouji/openwrt-passwall-packages' >>feeds.conf.default
+echo '添加Passwall依赖feeds'
+sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall-packages' feeds.conf.default
+echo '=========Add passwall feeds source OK!========='
+
+echo '添加Passwall软件源'
+rm -rf package/lean/luci-app-passwall 
+git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall package/lean/luci-app-passwall 
 echo '=========Add passwall source OK!========='
 
 echo '添加AdguardHome'
@@ -50,30 +54,15 @@ echo '=========Replace k3screen drive plug OK!========='
 # sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 # echo '=========Add Haiibo source OK!========='
 
-# echo '添加kenzok8 openwrt-package'
-# sed -i '1i src-git kenzo https://github.com/kenzok8/openwrt-packages' feeds.conf.default
-# sed -i '2i src-git small https://github.com/kenzok8/small' feeds.conf.default
-# echo '=========Add kenzok8 source OK!========='
 
 # echo '添加kenzok8 small-package'
-# sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
+# echo 'src-git kenzok8 https://github.com/kenzok8/small-package' >>feeds.conf.default
 # echo '=========Add kenzok8 source OK!========='
 
 #echo '添加kiddin9软件源'
 #echo 'src-git openwrt_kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
 #echo '=========Add kiddin9 source OK!========='
 
-# echo '添加MosDNS'
-# rm -rf feeds/packages/net/v2ray-geodata
-# rm -rf feeds/haiibo/luci-app-mosdns
-# rm -rf feeds/haiibo/mosdns
-# rm -rf package/feeds/haiibo/luci-app-mosdns
-# rm -rf package/feeds/haiibo/mosdns
-# find ./ | grep Makefile | grep v2ray-geodata | xargs rm -f
-# find ./ | grep Makefile | grep mosdns | xargs rm -f
-# git clone https://github.com/sbwml/luci-app-mosdns -b v5 package/mosdns
-# git clone https://github.com/sbwml/v2ray-geodata package/v2ray-geodata
-# echo '=========Add MosDNS OK!========='
 
 
 #1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
@@ -82,12 +71,6 @@ echo '替换无线驱动'
 wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='
 
-# Add a feed source
-#echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
-#echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
-#echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' >>feeds.conf.default
-#echo 'src-git small https://github.com/kenzok8/small' >>feeds.conf.default
-#echo 'src-git small8 https://github.com/Lenyu2020/small-package' >>feeds.conf.default
 
 #Compile K3 Only
 sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
