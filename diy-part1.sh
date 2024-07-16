@@ -21,12 +21,11 @@
 # echo '=========Add SSR-Plus source OK!========='
 
 echo '添加Passwall依赖feeds'
-sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall-packages' feeds.conf.default
+echo 'src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' >>feeds.conf.default
 echo '=========Add passwall feeds source OK!========='
 
 echo '添加Passwall软件源'
-rm -rf package/lean/luci-app-passwall 
-git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall package/lean/luci-app-passwall 
+echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' >>feeds.conf.default
 echo '=========Add passwall source OK!========='
 
 echo '添加AdguardHome'
