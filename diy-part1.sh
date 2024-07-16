@@ -28,6 +28,11 @@ echo '添加Passwall软件源'
 echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' >>feeds.conf.default
 echo '=========Add passwall source OK!========='
 
+echo '添加jerrykuku的argon-mod主题'
+rm -rf package/lean/luci-theme-argon  
+git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon package/lean/luci-theme-argon
+echo '=========Add argon-mod OK!========='
+
 echo '添加AdguardHome'
 # rm -rf feeds/kiddin9/adguardhome
 # rm -rf feeds/kiddin9/luci-app-adguardhome
