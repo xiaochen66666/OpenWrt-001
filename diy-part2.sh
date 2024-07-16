@@ -21,9 +21,9 @@ sed -i 's/^\(.*99999\)/#&/' package/lean/default-settings/files/zzz-default-sett
 #sed -i "s|root::0:0:99999:7:::|root:$password:0:0:99999:7:::|g" package/base-files/files/etc/shadow
 
 # 取消原主题luci-theme-bootstrap 为默认主题 - 修改 argon 为默认主题 - 删除原默认主题
-# sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
-# sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
-# rm -rf package/lean/luci-theme-bootstrap
+sed -i '/set luci.main.mediaurlbase=\/luci-static\/bootstrap/d' feeds/luci/themes/luci-theme-bootstrap/root/etc/uci-defaults/30_luci-theme-bootstrap
+sed -i 's/luci-theme-bootstrap/luci-theme-argon/g' feeds/luci/collections/luci/Makefile
+rm -rf package/lean/luci-theme-bootstrap
 
 echo '修改主机名'
 sed -i "s/hostname='OpenWrt'/hostname='Phicomm-K3'/g" package/base-files/files/bin/config_generate
