@@ -59,6 +59,10 @@ echo '=========Replace k3screen drive plug OK!========='
 # sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 # echo '=========Add kenzok8 source OK!========='
 
+#echo '添加kiddin9软件源'
+#echo 'src-git openwrt_kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
+#echo '=========Add kiddin9 source OK!========='
+
 # echo '添加MosDNS'
 # rm -rf feeds/packages/net/v2ray-geodata
 # rm -rf feeds/haiibo/luci-app-mosdns
