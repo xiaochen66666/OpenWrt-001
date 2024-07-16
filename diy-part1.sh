@@ -20,22 +20,22 @@
 # echo "src-git helloworld https://github.com/fw876/helloworld.git" >> "feeds.conf.default"
 # echo '=========Add SSR-Plus source OK!========='
 
-echo '添加Passwall依赖feeds'
-sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall-packages' feeds.conf.default
-echo '=========Add passwall feeds source OK!========='
+# echo '添加Passwall依赖feeds'
+# sed -i '$a src-git passwall https://github.com/xiaorouji/openwrt-passwall-packages' feeds.conf.default
+# echo '=========Add passwall feeds source OK!========='
 
 echo '添加Passwall软件源'
 # rm -rf feeds/kiddin9/luci-app-passwall
 # rm -rf package/feeds/kiddin9/luci-app-passwall
-rm -rf package/lean/luci-app-passwall 
-git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall package/lean/luci-app-passwall 
-echo '=========Add passwall source OK!========='
+# rm -rf package/lean/luci-app-passwall 
+# git clone -b main --single-branch https://github.com/xiaorouji/openwrt-passwall package/lean/luci-app-passwall 
+# echo '=========Add passwall source OK!========='
 
 echo '添加AdguardHome'
-# rm -rf feeds/kiddin9/adguardhome
-# rm -rf feeds/kiddin9/luci-app-adguardhome
-# rm -rf package/feeds/kiddin9/luci-app-adguardhome
-# rm -rf package/feeds/kiddin9/adguardhome
+rm -rf feeds/kiddin9/adguardhome
+rm -rf feeds/kiddin9/luci-app-adguardhome
+rm -rf package/feeds/kiddin9/luci-app-adguardhome
+rm -rf package/feeds/kiddin9/adguardhome
 rm -rf package/lean/luci-app-adguardhome
 git clone https://github.com/kongfl888/luci-app-adguardhome package/lean/luci-app-adguardhome 
 echo '=========Add AdguardHome OK!========='
@@ -61,10 +61,10 @@ echo '=========Replace k3screen drive plug OK!========='
 # echo 'src-git kenzok8 https://github.com/kenzok8/small-package' >>feeds.conf.default
 # echo '=========Add kenzok8 source OK!========='
 
-# echo '添加kiddin9软件源'
-# echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
-# echo '=========Add kiddin9 source OK!========='
-
+echo '添加kiddin9软件源'
+echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
+echo '=========Add kiddin9 source OK!========='
+echo 'src-git mproxy https://github.com/chenzhen6666/luci-app-mproxy.git' >>feeds.conf.default
 
 
 #1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
