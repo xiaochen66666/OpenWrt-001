@@ -22,7 +22,7 @@ env:
   DIY_P2_SH: diy-part2.sh
   CLASH_KERNEL: arm64
   CACHE_TOOLCHAIN: true
-  UPLOAD_BIN_DIR: false
+  UPLOAD_BIN_DIR: true
   FIRMWARE_RELEASE: true
   FIRMWARE_TAG: Phicomm-K3
   TZ: Asia/Shanghai
