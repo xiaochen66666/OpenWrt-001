@@ -43,6 +43,7 @@ git clone https://github.com/JE668/k3screenctrl_build.git package/lean/k3screenc
 echo '=========Replace k3screen drive plug OK!========='
 
 
+
 # echo '添加Haiibo软件源'
 # sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 # echo '=========Add Haiibo source OK!========='
@@ -57,8 +58,10 @@ echo '=========Replace k3screen drive plug OK!========='
 # echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
 # echo '=========Add kiddin9 source OK!========='
 
-echo 'src-git mproxy https://github.com/chenzhen6666/luci-app-mproxy.git' >>feeds.conf.default
 
+echo '添加mproxy软件源'
+echo 'src-git mproxy https://github.com/chenzhen6666/luci-app-mproxy.git' >>feeds.conf.default
+echo '=========Add mproxy source OK!========='
 
 #1.'asus_dhd24' 2.'ac88u_20' 3.'69027'
 firmware='69027'
@@ -66,6 +69,9 @@ echo '替换无线驱动'
 wget -nv https://github.com/JE668/Phicomm-k3-Wireless-Firmware/raw/master/brcmfmac4366c-pcie.bin.${firmware} -O package/lean/k3-brcmfmac4366c-firmware/files/lib/firmware/brcm/brcmfmac4366c-pcie.bin
 echo '=========Replace k3 wireless firmware OK!========='
 
+# 设置wifi功率
+sed -i '3a iwconfig wlan0 txpower 24' package/base-files/files/etc/rc.local
+sed -i '4a iwconfig wlan1 txpower 24' package/base-files/files/etc/rc.local
 
 #Compile K3 Only
 sed -i 's|^TARGET_|# TARGET_|g; s|# TARGET_DEVICES += phicomm_k3|TARGET_DEVICES += phicomm_k3|' target/linux/bcm53xx/image/Makefile
