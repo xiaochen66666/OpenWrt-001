@@ -1,15 +1,5 @@
 #!/bin/bash
-#
-# Copyright (c) 2020-2024 JE <https://gihub.com/JE668>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
-#
-# https://github.com/JE668/Phicomm-K3-LEDE-Firmware-Lean
-# File name: beta/diy-part1.sh
-# Description: OpenWrt DIY script part 1 (Before Update feeds)
 
-# https://github.com/FenghenHome/lede
 # https://github.com/coolsnowwolf/lede.git
 
 # Uncomment a feed source
@@ -53,7 +43,6 @@ git clone https://github.com/JE668/k3screenctrl_build.git package/lean/k3screenc
 echo '=========Replace k3screen drive plug OK!========='
 
 
-
 # echo '添加Haiibo软件源'
 # sed -i '1i src-git haiibo https://github.com/haiibo/openwrt-packages' feeds.conf.default
 # echo '=========Add Haiibo source OK!========='
@@ -67,6 +56,7 @@ echo '=========Replace k3screen drive plug OK!========='
 # echo '添加kiddin9软件源'
 # echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
 # echo '=========Add kiddin9 source OK!========='
+
 echo 'src-git mproxy https://github.com/chenzhen6666/luci-app-mproxy.git' >>feeds.conf.default
 
 
